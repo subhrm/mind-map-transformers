@@ -1,0 +1,200 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #9e70f3;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header p {
+    margin: 0.5rem 0 0;
+    opacity: 0.9;
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.instructions {
+    background-color: #e8f5e9;
+    border: 1px solid #4CAF50;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.instructions p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #2e7d32;
+}
+
+.instructions strong {
+    color: #1b5e20;
+}
+
+#mindmap {
+    flex: 1;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 600px;
+    position: relative;
+    overflow: auto;
+}
+
+#mindmap svg {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+/* Customize scrollbars for webkit browsers */
+#mindmap::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+#mindmap::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 8px;
+}
+
+#mindmap::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+    border: 3px solid #f1f1f1;
+}
+
+#mindmap::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+/* Customize scrollbars for Firefox */
+#mindmap {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.download-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #45a049;
+}
+
+svg {
+    cursor: grab;
+}
+
+svg:active {
+    cursor: grabbing;
+}
+
+.node ellipse {
+    fill: #fff;
+    stroke: #4CAF50;
+    stroke-width: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.node text {
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    fill: #333;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.node-symbol {
+    fill: #4CAF50;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.node-label {
+    dominant-baseline: middle;
+}
+
+.node-collapsed .node-symbol {
+    fill: #666;
+}
+
+.node:hover .node-symbol {
+    fill: #2E7D32;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+}
+
+.node-expanded ellipse {
+    fill: #E8F5E9;
+}
+
+.node:hover ellipse {
+    fill: #E8F5E9;
+    stroke-width: 3px;
+}
+
+.node-expanded:hover ellipse {
+    fill: #C8E6C9;
+}
+
+.node:hover text.node-label {
+    font-weight: bold;
+}
+
+.node-collapsed .node-children {
+    display: none;
+}
+
+/* Add smooth transitions */
+.node, .link {
+    transition: all 0.3s ease;
+} 
